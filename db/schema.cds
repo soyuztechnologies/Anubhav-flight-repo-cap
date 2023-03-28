@@ -10,7 +10,7 @@ using {
 namespace sap.fe.cap.travel;
 
 entity Travel : managed {
-  key TravelUUID : UUID;
+  key TravelUUID : String(30);
   TravelID       : Integer @readonly default 0 @Common.Text: Description;
   BeginDate      : Date;
   EndDate        : Date;
