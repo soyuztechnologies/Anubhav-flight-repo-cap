@@ -79,7 +79,7 @@ entity TravelStatus : CodeList {
 
 //TechEd extensions
 
-//Exercise 5: Bookings table micro chart
+//Exercise 7: Bookings table micro chart
 extend Booking with {
   criticality    : Integer default 0 @Core.Computed @UI.Hidden; 
   BookedFlights: Integer @Core.Computed;  
