@@ -27,7 +27,7 @@ entity Travel : managed {
   to_Booking     : Composition of many Booking on to_Booking.to_Travel = $self;
 };
 entity Booking : managed {
-  key BookingUUID   : UUID;
+  key BookingUUID   : String(30);
   BookingID         : Integer @Core.Computed;
   BookingDate       : Date;
   ConnectionID      : String(4);
