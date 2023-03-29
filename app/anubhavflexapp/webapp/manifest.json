@@ -130,7 +130,22 @@
                     "options": {
                         "settings": {
                             "entitySet": "Travel",
-                            "navigation": {}
+                            "navigation": {},
+                            "content": {
+                                "body": {
+                                    "sections": {
+                                        "CustomSection": {
+                                            "template": "com.anubhav.travel.anubhavflexapp.ext.fragment.CustomSection",
+                                            "position": {
+                                                "placement": "After",
+                                                "anchor": "i18nTravel"
+                                            },
+                                            "title": "{i18n>myItinearary}",
+                                            "type": "XMLFragment"
+                                        }
+                                    }
+                                }
+                            }
                         }
                     },
                     "controlAggregation": "midColumnPages",

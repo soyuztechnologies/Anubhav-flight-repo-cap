@@ -19,7 +19,9 @@ sap.ui.define(
 			},
 			handlers: {
                 onTilePress: function(oEvent){
-                    MessageToast.show("Wow Anubhav");
+                    var oContext = oEvent.getSource().getBindingContext();
+                    this.routing.navigate(oContext);
+                    //MessageToast.show("Wow Anubhav");
                 },
 				onFiltersChanged: function (oEvent) {
 					var oView = this.getView();
