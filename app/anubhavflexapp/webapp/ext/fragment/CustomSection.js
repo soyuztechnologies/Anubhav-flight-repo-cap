@@ -6,6 +6,11 @@ sap.ui.define([
     return {
         onPress: function(oEvent) {
             MessageToast.show("Custom handler invoked.");
+        },
+        handler: {
+            onChartSelectionChange: function(){
+                
+            }
         }
     };
 });

@@ -1,5 +1,6 @@
 using TravelService as service from '../../srv/travel-service';
 using from '../../db/schema';
+using from '../capabilities';
 
 annotate service.Travel with @(
     UI.SelectionFields : [
@@ -66,7 +67,7 @@ annotate service.Travel with @(
             $Type : 'UI.DataField',
             Value : Description,
         },
-        ImageUrl : 'https://yt3.googleusercontent.com/zCgSuKDRBWCoEFP52F5WNm-8q6FYKiiIlgpdqjdQaZekQc-PDcyFhi-cO8bkvtvOvH6qPBSg=s900-c-k-c0x00ffffff-no-rj',
+        ImageUrl : 'https://www.in2itebs.com/wp-content/uploads/2021/10/In2IT-EBS-Logo.png',
     }
 );
 annotate service.Travel with @(
@@ -244,6 +245,40 @@ annotate service.Booking with @(
                 DataPoint : '@UI.DataPoint#BookedFlights',
                 Role : #Axis1,
                 Measure : BookedFlights,
+            },
+        ],
+    }
+);
+
+annotate service.BookedFlights with @(
+    UI.Chart #BookedFlights : {
+        $Type : 'UI.ChartDefinitionType',
+        Title : 'Bookings by AirlineId',
+        ChartType : #Column,
+        Dimensions : [
+            to_Customer_CustomerID,
+            AirlineID,
+        ],
+        DimensionAttributes : [
+            {
+                $Type : 'UI.ChartDimensionAttributeType',
+                Dimension : to_Customer_CustomerID,
+                Role : #Category,
+            },
+            {
+                $Type : 'UI.ChartDimensionAttributeType',
+                Dimension : AirlineID,
+                Role : #Series,
+            },
+        ],
+        Measures : [
+            CountFlights,
+        ],
+        MeasureAttributes : [
+            {
+                $Type : 'UI.ChartMeasureAttributeType',
+                Measure : CountFlights,
+                Role : #Axis1,
             },
         ],
     }

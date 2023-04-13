@@ -1,11 +1,12 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros" xmlns:l="sap.ui.layout">
-	<VBox core:require="{ handler: 'com/anubhav/travel/anubhavflexapp/ext/fragment/CustomSection'}">
-		<MessageStrip text="All the Booking for the Travel id {TravelID} has been confirmed" showIcon="true">
-		</MessageStrip>
-		<l:Grid hSpacing="1" containerQuery="true">
-			<l:content>
-				<macros:Table metaPath="to_Booking/@UI.LineItem#i18nMyItinearary" id="bookingTable" />
-			</l:content>
-		</l:Grid>
-	</VBox>
+    <VBox core:require="{ handler: 'com/anubhav/travel/anubhavflexapp/ext/fragment/CustomSection'}">
+        <MessageStrip text="All the Booking for the Travel id {TravelID} has been confirmed" showIcon="true">
+        </MessageStrip>
+        <l:Grid hSpacing="1" containerQuery="true"  defaultSpan="L6 M6 S12">
+            <l:content>
+                <macros:Table metaPath="to_Booking/@UI.LineItem#i18nMyItinearary" id="bookingTable"/>
+                <macros:Chart id="BookingStatistics" metaPath="@com.sap.vocabularies.UI.v1.Chart#BookedFlights" contextPath="/Travel/to_BookedFlights" personalization="Type,Item" selectionMode="Single" selectionChange="handler.onChartSelectionChange"/>
+            </l:content>
+        </l:Grid>
+    </VBox>
 </core:FragmentDefinition>
